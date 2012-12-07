@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>崔文的个人网页</title>
+<meta name="Keywords" content="标准之路,www.aa25.cn,网页标准布局,DIV+CSS">
+<meta name="" content="标准之路,www.aa25.cn,网页标准布局,DIV+CSS">
+<meta name="author" content"×××,有问题请到www.68css.cn网站留言"="">
+<meta name="Description" content="">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+<style type="text/css"> 
+    body {margin: 0; padding:0px;text-align: center;}
+    
+    .content {
+        margin-top: 100px;
+    }
+    .content img.fuckIE6 {
+        z-index: 10;
+        border: 1px;
+    }
+</style>
+<script type="text/javascript">
+    function SBIE6(flag) {
+        switch (flag) {
+            case: 1
+                alert("SBIE6");
+            case: 2
+                alert("去你的IE6");
+            case: 3
+                var fanImg = "<img class=\"fuckIE6\" src=\"sunhao.jpg\">";
+                $(".content").after(fanImg);
+        }
+    }
+</script>
+</head>
+
+<body>
+<div class="content">
+    <input type="button" value="SB IE6" onclick="SBIE6(3)"/>
+</div>
+</body></html>
