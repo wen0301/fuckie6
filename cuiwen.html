@@ -10,6 +10,7 @@
     body {margin: 0; padding:0px;text-align: center;}
     
     .content {
+        position: relative;
         margin-top: 100px;
         margin-bottom: 70px;
     }
@@ -31,7 +32,7 @@
 </head>
 <body>
 <div class="content">
-    <a href="javascript:void(0);" id="sbIe6" class="4">SB IE6</a>
+    <a href="javascript:void(0);" id="sbIe6" class="5">SB IE6</a>
 </div>
 </body>
 
@@ -72,6 +73,19 @@
                     var fanImg = "<img class=\"fuckIE6\" src=\"fuck.jpg\">";
                     $(".content").after(fanImg);
                     break;
+                case "5":
+                var fanImg = "<img id=\"imgObj\" class=\"fuckIE6\" src=\"angryman.png\">";
+                $(".content").after(fanImg);
+                setInterval(function(){
+                    $("#imgObj").css("opacity", "0.5");
+                    
+                }, 500);
+
+                setInterval(function(){
+                    $("#imgObj").css("opacity", "1");
+                    
+                }, 550);
+                break;
                 default:
                     alert(11);
             }
