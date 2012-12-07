@@ -11,34 +11,72 @@
     
     .content {
         margin-top: 100px;
+        margin-bottom: 70px;
     }
-    .content img.fuckIE6 {
-        z-index: 10;
-        border: 1px;
+    .content a {
+        background: rgb(81,163,81);
+        font-size:20px;
+        padding: 50px;
+        margin: 20px;
+        color: white;
+        text-decoration: none;
+    }
+    .content a:hover {
+        position: relative;
+        top: 2px;
+        left: 2px;
+        background: rgb(81,180,81);
     }
 </style>
-<script type="text/javascript">
-    function SBIE6(flag) {
-        switch (flag) {
-            case 1: 
-                alert("SBIE6");
-                break;
-            case 2:
-                alert("去你的IE6");
-                break;
-            case 3:
-                var fanImg = "<img class=\"fuckIE6\" src=\"sunhao.jpg\">";
-                $(".content").after(fanImg);
-                break;
-            default:
-                alert(11);
-        }
-    }
-</script>
 </head>
-
 <body>
 <div class="content">
-    <input type="button" value="SB IE6" onclick="SBIE6(3)"/>
+    <a href="javascript:void(0);" id="sbIe6" class="4">SB IE6</a>
 </div>
-</body></html>
+</body>
+
+<script type="text/javascript">
+(function() {
+    
+    // 模式1：加载完毕后
+    window.onload = function() {
+        var ie6 = $.browser.msie && $.browser.version < 7, ie6offset = (ie6 ? 1 : 0);
+        if (ie6) {
+            var type = $("#sbIe6").attr("class");
+            fuckIe6(type);
+        }
+    }
+
+    // 模式2：点击Button后
+    $("#sbIe6").bind("click", function() {
+        var type = $(this).attr("class");
+        fuckIe6(type);
+    });
+
+    // Fuck IE6主程序
+    function fuckIe6(type) {
+        var ie6 = $.browser.msie && $.browser.version < 7, ie6offset = (ie6 ? 1 : 0);
+        if (!ie6) {
+            switch (type) {
+                case "1": 
+                    alert("SBIE6");
+                    break;
+                case "2":
+                    alert("去你的IE6");
+                    break;
+                case "3":
+                    var fanImg = "<img class=\"fuckIE6\" src=\"sunhao.jpg\">";
+                    $(".content").after(fanImg);
+                    break;
+                case "4":
+                    var fanImg = "<img class=\"fuckIE6\" src=\"fuck.jpg\">";
+                    $(".content").after(fanImg);
+                    break;
+                default:
+                    alert(11);
+            }
+        }
+    }
+})(jQuery);
+</script>
+</html>
